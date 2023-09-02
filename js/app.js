@@ -117,3 +117,8 @@ function timeConversion(inSeconds){
     console.log('ok');
     return `${hour}hrs ${min} min ago`;
 }
+
+
+document.getElementById('blog-btn').addEventListener('click',function(){
+    window.location.href = 'blog.html';
+})
