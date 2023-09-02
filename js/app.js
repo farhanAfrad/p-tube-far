@@ -14,8 +14,7 @@ loadCategories();
 
 // this function is A PART OF display data of a particular category in the UI
 const displayData = (posts,bool) =>{
-    
-    
+      
     const displayDataContainer = document.getElementById('display-data-container');
     displayDataContainer.innerHTML = '';
 
