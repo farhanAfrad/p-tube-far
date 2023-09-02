@@ -12,10 +12,10 @@ const loadCategories  = async () =>{
 }
 loadCategories();
 
-// this function is for display data of a particular category in the ui
+// this function is A PART OF display data of a particular category in the UI
 const displayData = (posts,bool) =>{
     
-    // console.log(posts[0].title);
+    
     const displayDataContainer = document.getElementById('display-data-container');
     displayDataContainer.innerHTML = '';
 
@@ -40,6 +40,7 @@ const displayData = (posts,bool) =>{
     
 }
 
+// this function IS AONTHER part  for display in the UI
 function display(posts){
     const displayDataContainer = document.getElementById('display-data-container');
     posts.forEach(post =>{
@@ -76,11 +77,9 @@ const loadData = async (id) =>{
     const url = `https://openapi.programming-hero.com/api/videos/category/${id}`
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data.data);
     const posts = data.data;
     globalPostForSort = posts;
     displayData(posts,false);
-    // dataMessenger(posts,true);
 }
 
 // default loading
@@ -90,7 +89,6 @@ loadData('1000');
 const categoriesBtn = (categories) =>{
     const categoryBtncontainer = document.getElementById('category-btn-container');
     categories.forEach(cat => {
-        // console.log(cat.category);
         const btn = document.createElement('button');
         btn.classList = 'btn';
         btn.innerText = cat.category;
@@ -103,13 +101,13 @@ const categoriesBtn = (categories) =>{
 
 
 
-
+// this is sort by view button
 document.getElementById('sort-btn').addEventListener('click',function(){  
     displayData(globalPostForSort,true);
 })
 
 
-
+// this is for time conversion in hours and min
 function timeConversion(inSeconds){
     const totalMin = Math.floor(inSeconds/60);
     const hour = Math.floor(totalMin/60);
@@ -118,7 +116,7 @@ function timeConversion(inSeconds){
     return `${hour}hrs ${min} min ago`;
 }
 
-
+// this is for blog page
 document.getElementById('blog-btn').addEventListener('click',function(){
     window.location.href = 'blog.html';
 })
